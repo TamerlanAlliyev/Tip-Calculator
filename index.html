@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+
+        <div class="answer-display">
+
+            <div class="tip box">
+                <div class="box-name">
+                    <h2>tip:</h2>
+                    <p>/person</p>
+                </div>
+
+                <div class="box-price">
+                    <h3 id="tipPrice">$15.0</h3>
+                </div>
+            </div>
+
+
+            <div class="total box">
+                <div class="box-name">
+                    <h2>total:</h2>
+                    <p>/person</p>
+                </div>
+
+                <div class="box-price">
+                    <h3 id="totalPrice">$165.0</h3>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="calculation">
+
+            <h4>bill</h4>
+            <input id="bill" type="text" value="300.00">
+
+            <h4>tip</h4>
+            <div class="tip inp">
+                <button class="decreasing" id="tipDecreasing">-</button>
+                <input id="tip" type="text" value="0%">
+                <button class="increasing" id="tipIncreasing">+</button>
+            </div>
+
+            <h4>no. of people</h4>
+            <div class="people inp">
+                <button class="decreasing" id="peopleDecreasing">-</button>
+                <input id="ofPeople" type="text" value="1">
+                <button class="increasing" id="peopleIncreasing">+</button>
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

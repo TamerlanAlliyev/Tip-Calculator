@@ -23,13 +23,11 @@ const peopleDecreasing = document.getElementById("peopleDecreasing");
 let tipCount = 0;
 let peopleCount = 1;
 let billCount = billInput.value;
-
 let tipDisplay = 0;
 let totalDisplay = 0;
 
-console.log(billCount);
-// tipInput.value = `${tip}%`;
 
+// BUTTONS 
 tipIncreasing.addEventListener('click', () => {
     if (tipCount >= 0 && tipCount <= 95) {
         tipCount += 5;
@@ -66,7 +64,23 @@ peopleDecreasing.addEventListener('click', () => {
 
 
 
+// INPUT
+billInput.addEventListener('input', () => {
+    let value = billInput.value;
 
+    if (value.includes('.')) {
+        let parts = value.split('.');
+        if (parts[1].length > 2) {
+            value = `${parts[0]}.${parts[1].substring(0, 2)}`;
+        }
+    }
+    billInput.value = value;
+});
+
+
+
+
+// FUNCTIONS
 const tipPriceAnswer = () => {
     billCount = billInput.value;
     const calculation = `${billCount}/100*${tipCount}/${peopleCount}`;
@@ -86,15 +100,3 @@ const totalPriceAnswer = () => {
 
 
 
-billInput.addEventListener('input', () => {
-    let value = billInput.value;
-
-    if (value.includes('.')) {
-        let parts = value.split('.');
-        if (parts[1].length > 2) {
-            value = `${parts[0]}.${parts[1].substring(0, 2)}`;
-        }
-    }
-
-    billInput.value = value;
-});
